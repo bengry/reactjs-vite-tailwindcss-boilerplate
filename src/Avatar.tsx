@@ -1,4 +1,4 @@
-import { classNames } from 'utils'
+import clsx from 'clsx'
 
 type Size = 'small' | 'medium' | 'large'
 
@@ -16,9 +16,8 @@ const sizes: Record<Size, string> = {
 
 const EmptyAvatar = ({ size = 'medium' }: Pick<AvatarProps, 'size'>) => (
   <span
-    data-testid="empty-avatar"
-    className={classNames(
-      'inline-block overflow-hidden bg-gray-100 rounded-full',
+    className={clsx(
+      'inline-block overflow-hidden rounded-full bg-gray-100',
       sizes[size]
     )}
   >
@@ -32,14 +31,14 @@ const EmptyAvatar = ({ size = 'medium' }: Pick<AvatarProps, 'size'>) => (
   </span>
 )
 
-export default function Avatar({ size = 'medium', src, alt }: AvatarProps) {
+export function Avatar({ size = 'medium', src, alt }: AvatarProps) {
   if (!src) {
     return <EmptyAvatar size={size} />
   }
 
   return (
     <img
-      className={classNames('inline-block rounded-full', sizes[size])}
+      className={clsx('inline-block rounded-full', sizes[size])}
       src={src}
       alt={alt}
     />

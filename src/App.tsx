@@ -1,6 +1,6 @@
-import Avatar from 'components/Avatar'
+import { Avatar } from './Avatar'
 
-function App() {
+export function App() {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-screen-xl py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -13,15 +13,10 @@ function App() {
           </p>
           <p className="text-xl text-gray-400">Start building for free.</p>
           <p className="mt-5">
-            <Avatar
-              size="large"
-              src="https://www.gravatar.com/avatar/4405735f6f3129e0286d9d43e7b460d0"
-            />
+            <Avatar size="large" src="https://i.pravatar.cc/300" />
           </p>
         </div>
       </div>
     </div>
   )
 }
-
-export default App
